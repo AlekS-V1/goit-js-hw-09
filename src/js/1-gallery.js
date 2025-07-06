@@ -1,3 +1,6 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const images = [
     {
       preview:
@@ -80,24 +83,13 @@ const list = document.querySelector('.gallery');
       </a>
     </li>`
     )
-    .join('');
-    
+    .join('');    
       
-  list.innerHTML = imgGallery;
-  
-  document.querySelectorAll('.gallery-link').forEach((link) =>
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-    })
-);
-
-
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
-
-new SimpleLightbox('.gallery-link', {
-  captionsData: 'alt',
-  captionDelay: 250,
+list.insertAdjacentHTML('beforeend', imgGallery);
+ 
+let gallery = new SimpleLightbox('.gallery-link');
+gallery.on('show.simplelightbox', {
+    captionsData: 'alt',
+    captionDelay: 250,
 });
-
 
