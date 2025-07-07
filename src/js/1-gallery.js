@@ -87,9 +87,9 @@ const list = document.querySelector('.gallery');
       
 list.insertAdjacentHTML('beforeend', imgGallery);
  
-let gallery = new SimpleLightbox('.gallery-link');
-gallery.on('show.simplelightbox', {
-    captionsData: 'alt',
-    captionDelay: 250,
+let gallery = new SimpleLightbox('.gallery-link', {
+  captionsData: 'alt',
+  captionDelay: 250,
 });
+gallery.on('show.simplelightbox', );
 
